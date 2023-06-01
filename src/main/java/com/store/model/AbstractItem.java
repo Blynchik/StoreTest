@@ -16,17 +16,17 @@ public abstract class AbstractItem {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
     @Column(name = "serial_number")
-    private String serialNumber;
+    protected String serialNumber;
 
     @Column(name = "manufacturer")
-    private String manufacturer;
+    protected String manufacturer;
 
     @Column(name = "price")
-    private Integer price;
+    protected Integer price;
 
     @Column(name = "amount")
-    private Integer amount;
+    protected Integer amount;
 }

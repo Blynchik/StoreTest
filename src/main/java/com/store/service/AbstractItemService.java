@@ -10,7 +10,7 @@ import java.util.Optional;
 @Transactional(readOnly = true)
 public abstract class AbstractItemService<T extends AbstractItem, R extends JpaRepository<T, Long>> {
 
-    private final R repository;
+    protected final R repository;
 
     public AbstractItemService(R repository){
         this.repository = repository;

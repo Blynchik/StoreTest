@@ -1,4 +1,4 @@
-package com.store.service.impl;
+package com.store.service.monitor;
 
 import com.store.model.monitor.Monitor;
 import com.store.service.AbstractItemService;

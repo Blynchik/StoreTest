@@ -1,4 +1,4 @@
-package com.store.service.impl;
+package com.store.service.computer;
 
 import com.store.model.computer.Computer;
 import com.store.service.AbstractItemService;

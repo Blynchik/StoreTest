@@ -1,4 +1,4 @@
-package com.store.service.impl;
+package com.store.service.notebook;
 
 import com.store.model.notebook.Notebook;
 import com.store.service.AbstractItemService;

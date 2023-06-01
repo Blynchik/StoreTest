@@ -1,4 +1,4 @@
-package com.store.service.impl;
+package com.store.service.hdd;
 
 import com.store.model.hdd.HDD;
 import com.store.service.AbstractItemService;

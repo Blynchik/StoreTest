@@ -12,7 +12,7 @@ public abstract class AbstractItemController
         <T extends AbstractItem, S extends AbstractItemService
                 <T, ? extends JpaRepository<T, Long>>> {
 
-    private final S itemService;
+    protected final S itemService;
 
     public AbstractItemController(S itemService) {
         this.itemService = itemService;

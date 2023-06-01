@@ -1,8 +1,8 @@
-package com.store.controller.impl;
+package com.store.controller.monitor;
 
 import com.store.controller.AbstractItemController;
 import com.store.model.monitor.Monitor;
-import com.store.service.impl.MonitorService;
+import com.store.service.monitor.MonitorService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
