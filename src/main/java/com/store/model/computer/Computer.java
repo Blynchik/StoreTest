@@ -23,6 +23,7 @@ public class Computer extends AbstractItem {
             joinColumns = @JoinColumn(name = "id"))
     @Column(name = "form_factor")
     @JoinColumn
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
     private FormFactor formFactor;
 }
