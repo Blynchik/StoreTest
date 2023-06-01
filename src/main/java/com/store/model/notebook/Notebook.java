@@ -21,9 +21,9 @@ public class Notebook extends AbstractItem {
     @Enumerated(EnumType.STRING)
     @CollectionTable(name = "notebook_size",
             joinColumns = @JoinColumn(name = "id"))
-    @Column(name = "notebook")
+    @Column(name = "notebook_size")
     @JoinColumn
     @NotNull
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private NotebookSize inches;
+    private NotebookSize notebookSize;
 }
