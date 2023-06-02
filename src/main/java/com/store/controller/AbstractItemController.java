@@ -4,6 +4,7 @@ import com.store.model.AbstractItem;
 import com.store.service.AbstractItemService;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public abstract class AbstractItemController
         this.itemService = itemService;
     }
 
-    @GetMapping("/showAll")
+    @GetMapping("/getAll")
     public ResponseEntity<List<T>> getAll() {
         return ResponseEntity.ok(itemService.getAll());
     }
@@ -34,10 +35,7 @@ public abstract class AbstractItemController
         return ResponseEntity.ok().body(item.get());
     }
 
-    @PostMapping("/add")
-    public void add(@RequestBody T item) {
-        itemService.add(item);
-    }
+    public abstract ResponseEntity<?> add(T item, BindingResult bindingResult);
 
     @PutMapping("/{id}")
     public void update(@PathVariable Long id,

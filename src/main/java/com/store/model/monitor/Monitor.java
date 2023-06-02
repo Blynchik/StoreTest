@@ -19,8 +19,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Monitor extends AbstractItem {
 
-    @Min(5)
-    @Max(106)
+    @Min(value = 5, message = "Should be greater then 4 inches")
+    @Max(value = 105, message = "Should be less then 106 inches")
     @Column(name = "diagonal_inches")
     private Integer diagonalInches;
 }
