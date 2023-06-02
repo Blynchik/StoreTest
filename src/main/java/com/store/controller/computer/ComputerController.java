@@ -24,22 +24,6 @@ public class ComputerController extends AbstractItemController<Computer, Compute
         super(itemService);
     }
 
-    @PostMapping("/add")
-    @Override
-    public ResponseEntity<?> add(@Valid @RequestBody Computer computer,
-                                 BindingResult bindingResult) {
-
-        if(bindingResult.hasErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                    bindingResult.getAllErrors().stream()
-                            .map(DefaultMessageSourceResolvable::getDefaultMessage));
-        }
-
-        itemService.add(computer);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(computer);
-    }
-
     @Override
     protected void checkExistence(Optional<Computer> item, Long id) {
 

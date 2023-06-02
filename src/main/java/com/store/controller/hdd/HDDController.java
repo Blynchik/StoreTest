@@ -25,22 +25,6 @@ public class HDDController extends AbstractItemController<HDD, HDDService> {
         super(itemService);
     }
 
-    @PostMapping("/add")
-    @Override
-    public ResponseEntity<?> add(@Valid @RequestBody HDD hdd,
-                                 BindingResult bindingResult) {
-
-        if(bindingResult.hasErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                    bindingResult.getAllErrors().stream()
-                            .map(DefaultMessageSourceResolvable::getDefaultMessage));
-        }
-
-        itemService.add(hdd);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(hdd);
-    }
-
     @Override
     protected void checkExistence(Optional<HDD> item, Long id) {
 

@@ -25,22 +25,6 @@ public class MonitorController extends AbstractItemController<Monitor, MonitorSe
         super(itemService);
     }
 
-    @PostMapping("/add")
-    @Override
-    public ResponseEntity<?> add(@Valid @RequestBody Monitor monitor,
-                                 BindingResult bindingResult) {
-
-        if(bindingResult.hasErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                    bindingResult.getAllErrors().stream()
-                            .map(DefaultMessageSourceResolvable::getDefaultMessage));
-        }
-
-        itemService.add(monitor);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(monitor);
-    }
-
     @Override
     protected void checkExistence(Optional<Monitor> item, Long id) {
 

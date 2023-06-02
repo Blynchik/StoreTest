@@ -25,22 +25,6 @@ public class NotebookController extends AbstractItemController<Notebook, Noteboo
         super(itemService);
     }
 
-    @PostMapping("/add")
-    @Override
-    public ResponseEntity<?> add(@Valid @RequestBody Notebook notebook,
-                                 BindingResult bindingResult) {
-
-        if(bindingResult.hasErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                    bindingResult.getAllErrors().stream()
-                            .map(DefaultMessageSourceResolvable::getDefaultMessage));
-        }
-
-        itemService.add(notebook);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(notebook);
-    }
-
     @Override
     protected void checkExistence(Optional<Notebook> item, Long id) {
 
