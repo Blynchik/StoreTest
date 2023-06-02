@@ -1,8 +1,11 @@
 package com.store.controller;
 
+import com.store.exception.NotFoundException;
 import com.store.model.AbstractItem;
+import com.store.model.computer.Computer;
 import com.store.service.AbstractItemService;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,13 +22,18 @@ public abstract class AbstractItemController
     }
 
     @GetMapping("/showAll")
-    public List<T> showAll() {
-        return itemService.getAll();
+    public ResponseEntity<List<T>> getAll() {
+        return ResponseEntity.ok(itemService.getAll());
     }
 
     @GetMapping("/{id}")
-    public Optional<T> showOne(@PathVariable Long id) {
-        return itemService.getOne(id);
+    public ResponseEntity<T> getOne(@PathVariable Long id) {
+
+        Optional<T> item = itemService.getOne(id);
+
+        checkExistence(item, id);
+
+        return ResponseEntity.ok().body(item.get());
     }
 
     @PostMapping("/add")
@@ -35,7 +43,12 @@ public abstract class AbstractItemController
 
     @PutMapping("/{id}")
     public void update(@PathVariable Long id,
-                       @RequestBody T updatedItem){
+                       @RequestBody T updatedItem) {
+
+        checkExistence(itemService.getOne(id), id);
+
         itemService.update(id, updatedItem);
     }
+
+    protected abstract void checkExistence(Optional<T> item, Long id);
 }
