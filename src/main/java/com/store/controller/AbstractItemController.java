@@ -1,8 +1,6 @@
 package com.store.controller;
 
-import com.store.exception.NotFoundException;
 import com.store.model.AbstractItem;
-import com.store.model.computer.Computer;
 import com.store.service.AbstractItemService;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.ResponseEntity;

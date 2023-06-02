@@ -1,11 +1,11 @@
 package com.store.exception;
 
-public class NotFoundException extends RuntimeException{
+public class ItemNotFoundException extends RuntimeException{
 
-    public NotFoundException(){
+    public ItemNotFoundException(){
     }
 
-    public NotFoundException(Class clazz, Long id){
+    public ItemNotFoundException(Class clazz, Long id){
         super(clazz.getName()
                 .substring(clazz.getName().lastIndexOf(".")+1)
                 + " id:" + id + " не найден");

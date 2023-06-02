@@ -1,7 +1,7 @@
 package com.store.controller.computer;
 
 import com.store.controller.AbstractItemController;
-import com.store.exception.NotFoundException;
+import com.store.exception.ItemNotFoundException;
 import com.store.model.computer.Computer;
 import com.store.service.computer.ComputerService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +21,7 @@ public class ComputerController extends AbstractItemController<Computer, Compute
     protected void checkExistence(Optional<Computer> item, Long id) {
 
         if(item.isEmpty()){
-            throw new NotFoundException(Computer.class, id);
+            throw new ItemNotFoundException(Computer.class, id);
         }
     }
 }
