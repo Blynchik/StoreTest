@@ -13,4 +13,8 @@ public enum NotebookSize {
     NotebookSize(int size){
         this.size = size;
     }
+
+    public String getNotebookSize(){
+        return String.valueOf(size);
+    }
 }

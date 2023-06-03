@@ -16,4 +16,8 @@ public enum HDDCapacity {
     HDDCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    public String getCapacity(){
+        return String.valueOf(capacity);
+    }
 }

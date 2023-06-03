@@ -26,4 +26,8 @@ public class Notebook extends AbstractItem {
     @NotNull
     @OnDelete(action = OnDeleteAction.CASCADE)
     private NotebookSize notebookSize;
+
+    public String getNoteBookSize(){
+        return notebookSize.getNotebookSize();
+    }
 }

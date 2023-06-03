@@ -21,11 +21,11 @@ public abstract class AbstractItem {
     protected Long id;
 
     @Column(name = "serial_number")
-    @NotBlank
+    @NotBlank(message = "Should not be empty")
     protected String serialNumber;
 
     @Column(name = "manufacturer")
-    @NotBlank
+    @NotBlank(message = "Should not be empty")
     protected String manufacturer;
 
     @Column(name = "price")

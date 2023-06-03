@@ -26,4 +26,8 @@ public class HDD extends AbstractItem {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
     private HDDCapacity capacity;
+
+    public String getCapacity(){
+        return capacity.getCapacity();
+    }
 }
